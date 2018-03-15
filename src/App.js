@@ -1,18 +1,36 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import Homepage from './components/Home';
 import './App.css';
+
+import { Thumbnail,
+         Button,
+         Col,
+         Grid,
+         Row} from 'react-bootstrap';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+
+        <Grid>
+          <Row className="show-grid">
+            <Col md={3} mdOffset={1}>
+                <Homepage
+                word = "Budget" />
+            </Col>
+            <Col md={3} mdOffset={1}>
+                <Homepage
+                word = "Usage" />
+            </Col>
+            <Col md={3} mdOffset={1}>
+                <Homepage
+                word = "Save" />
+            </Col>
+        </Row>
+        </Grid>
+
       </div>
     );
   }
